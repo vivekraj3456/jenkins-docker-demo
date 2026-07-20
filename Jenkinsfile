@@ -2,17 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('Build Docker Image') {
+
+        stage('Checkout') {
             steps {
-                bat 'docker build -t jenkins-demo .'
+                git branch: 'main',
+                    url: 'https://github.com/vivekraj3456/jenkins-docker-demo.git'
             }
         }
 
-        stage('Run Docker Container') {
+        stage('Test') {
             steps {
-                bat 'docker stop mywebsite || exit 0'
-                bat 'docker rm mywebsite || exit 0'
-                bat 'docker run -d -p 8081:80 --name mywebsite jenkins-demo'
+                bat 'if exist index.html echo Application file index.html found'
             }
         }
     }
