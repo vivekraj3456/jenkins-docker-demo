@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenkins CI/CD Demo</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:linear-gradient(135deg,#007bff,#00c6ff);
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .card{
+            background:white;
+            width:500px;
+            padding:40px;
+            border-radius:15px;
+            text-align:center;
+            box-shadow:0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        h1{
+            color:#007bff;
+            margin-bottom:20px;
+        }
+
+        p{
+            font-size:18px;
+            color:#444;
+            margin-bottom:20px;
+        }
+
+        button{
+            padding:12px 25px;
+            background:#007bff;
+            color:white;
+            border:none;
+            border-radius:8px;
+            font-size:18px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#0056b3;
+        }
+
+        #msg{
+            margin-top:20px;
+            color:green;
+            font-weight:bold;
+            font-size:20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>🚀 Jenkins CI/CD Demo</h1>
+
+    <p>
+        This webpage is deployed using
+        <b>Jenkins + Docker + GitHub</b>.
+    </p>
+
+    <button onclick="showMessage()">
+        Click Me
+    </button>
+
+    <p id="msg"></p>
+</div>
+
+<script>
+function showMessage(){
+    document.getElementById("msg").innerHTML =
+    "✅ Build Successful! Welcome to Jenkins CI/CD Pipeline.";
+}
+</script>
+
+</body>
+</html>
