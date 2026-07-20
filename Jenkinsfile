@@ -12,8 +12,25 @@ pipeline {
 
         stage('Test') {
             steps {
-                bat 'if exist index.html echo Application file index.html found'
+                bat '''
+                if exist index.html (
+                    echo Application file index.html found
+                ) else (
+                    echo Application file index.html NOT found
+                    exit /b 1
+                )
+                '''
             }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline Completed Successfully'
+        }
+
+        failure {
+            echo 'Pipeline Failed'
         }
     }
 }
